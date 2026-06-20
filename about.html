@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>About Us | P Techs Technologies – Cybersecurity Experts</title>
+    <meta name="description" content="Learn about P Techs Technologies — our mission, our team, and our dedication to protecting your data with advanced cybersecurity solutions.">
+    <meta name="keywords" content="about P Techs, cybersecurity company, data security South Africa, tech team">
+    <meta name="author" content="P Techs Technologies">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <style>
+        body {
+            background-color: #f4f7fc;
+            background-image: url('https://www.transparenttextures.com/patterns/diagmonds-light.png');
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: #fff;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .page-hero p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 700px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+
+        .about-grid img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 14px;
+            color: #0f3b4f;
+        }
+
+        .about-text p {
+            color: #334155;
+            margin-bottom: 14px;
+            font-size: 1rem;
+        }
+
+        .services-list {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .services-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .services-list li::before {
+            content: '✔';
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* Values tabs */
+        .values-section {
+            background: #fff;
+            padding: 60px 20px;
+        }
+
+        .values-inner {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* Gallery */
+        .gallery-section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <a href="index.html" class="logo">P Techs <span>Technologies</span></a>
+    <nav aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link" aria-current="page">About</a></li>
+            <li><a href="products.html" class="nav-link">Products</a></li> 
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <h1>About P Techs</h1>
+    <p>Dedicated to safeguarding South Africa's most valuable digital assets since 2020.</p>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section aria-label="About P Techs">
+    <div class="about-grid">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p>
+                At P Techs, we are dedicated to safeguarding the most valuable asset of today's digital age — data. As a leading provider of advanced cybersecurity solutions, we specialize in protecting businesses and individuals from the ever-evolving threats of the digital world.
+            </p>
+            <p>
+                Whether you're a startup, a multinational corporation, or an individual seeking peace of mind, we deliver custom, reliable, and robust data security solutions tailored to your unique needs.
+            </p>
+
+            <ul class="services-list" aria-label="Core services">
+                <li>Data Encryption and Secure Storage</li>
+                <li>Real-Time Threat Detection and Monitoring</li>
+                <li>Compliance and Regulatory Support (POPIA/GDPR)</li>
+                <li>Programming and Cybersecurity Training</li>
+            </ul>
+        </div>
+
+        <div>
+            <img src="imgggg/pexels-jakubzerdzicki-18721086 (2).jpg" alt="P Techs team working on cybersecurity solutions">
+        </div>
+    </div>
+</section>
+
+<!-- VALUES – TABS -->
+<section class="values-section" aria-label="Our values">
+    <div class="values-inner">
+        <h2 class="section-title">Our Core Values</h2>
+        <p class="section-subtitle">The principles that guide everything we do</p>
+
+        <div class="tabs-wrapper">
+            <div class="tab-buttons" role="tablist">
+                <button class="tab-btn active" data-tab="tab-integrity" role="tab" aria-selected="true">Integrity</button>
+                <button class="tab-btn" data-tab="tab-innovation" role="tab" aria-selected="false">Innovation</button>
+                <button class="tab-btn" data-tab="tab-excellence" role="tab" aria-selected="false">Excellence</button>
+                <button class="tab-btn" data-tab="tab-community" role="tab" aria-selected="false">Community</button>
+            </div>
+
+            <div id="tab-integrity" class="tab-panel active" role="tabpanel">
+                <h3>Integrity First</h3>
+                <p>We operate with full transparency. Our clients trust us with their most sensitive data and we take that responsibility seriously — always acting ethically and honestly in every engagement.</p>
+            </div>
+            <div id="tab-innovation" class="tab-panel" role="tabpanel">
+                <h3>Driven by Innovation</h3>
+                <p>The threat landscape never stops evolving, and neither do we. Our team continuously researches emerging technologies and attack vectors to keep our solutions one step ahead.</p>
+            </div>
+            <div id="tab-excellence" class="tab-panel" role="tabpanel">
+                <h3>Committed to Excellence</h3>
+                <p>From our customer support to our technical solutions, we hold ourselves to the highest standard. Every engagement is approached with precision, care, and professionalism.</p>
+            </div>
+            <div id="tab-community" class="tab-panel" role="tabpanel">
+                <h3>Building Community</h3>
+                <p>We believe in uplifting South Africa's tech ecosystem through skills development, free workshops, and partnerships with educational institutions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY WITH LIGHTBOX -->
+<section class="gallery-section" aria-label="Photo gallery">
+    <h2 class="section-title">Our Work in Action</h2>
+    <p class="section-subtitle">A glimpse into the P Techs environment</p>
+
+    <div class="gallery-grid">
+        <div class="gallery-item" data-caption="Our secure data centre" tabindex="0" role="button" aria-label="View: Our secure data centre">
+            <img src="imgggg/pexels-jakubzerdzicki-18721086 (2).jpg" alt="P Techs data centre">
+            <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-caption="Training workshop session" tabindex="0" role="button" aria-label="View: Training workshop session">
+            <img src="imgggg/pexels-jakubzerdzicki-18721086 (2).jpg" alt="Training workshop">
+            <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-caption="Team collaboration at P Techs" tabindex="0" role="button" aria-label="View: Team collaboration">
+            <img src="imgggg/pexels-jakubzerdzicki-18721086 (2).jpg" alt="Team working together">
+            <div class="gallery-overlay">🔍</div>
+        </div>
+    </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+    <img src="" alt="Enlarged gallery image">
+    <p class="lightbox-caption"></p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 P Techs Technologies | <a href="contact.html">Contact Us</a> | <a href="enquiry.html">Enquiry</a></p>
+</footer>
+
+<script src="JS/main.js"></script>
+</body>
+</html>

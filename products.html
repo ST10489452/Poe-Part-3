@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Products | P Techs Technologies</title>
+<meta name="description" content="Browse our technology products including cybersecurity tools, software solutions, learning resources, and digital services.">
+<meta name="keywords" content="technology products, cybersecurity software, digital tools, learning resources, P Techs products">
+<meta name="author" content="P Techs Technologies">
+
+<link rel="stylesheet" href="CSS/style.css">
+
+<style>
+body{
+    background-color:#f4f7fc;
+    background-image:url('https://www.transparenttextures.com/patterns/diagmonds-light.png');
+}
+
+.page-hero{
+    background:linear-gradient(135deg,#1e3a8a,#2563eb);
+    color:#fff;
+    padding:70px 20px;
+    text-align:center;
+}
+
+.page-hero h1{
+    font-size:2.8rem;
+    margin-bottom:10px;
+}
+
+.page-hero p{
+    color:#bfdbfe;
+    max-width:600px;
+    margin:auto;
+}
+
+.products-section{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.search-bar{
+    margin-bottom:20px;
+}
+
+.search-bar input{
+    width:100%;
+    padding:14px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+.filter-btns{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.filter-btn{
+    border:none;
+    background:#e2e8f0;
+    padding:10px 18px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.filter-btn.active{
+    background:#2563eb;
+    color:white;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:16px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 4px 14px rgba(0,0,0,0.06);
+    overflow:hidden;
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 30px rgba(37,99,235,0.13);
+    border-color:#2563eb;
+}
+
+.product-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.product-content{
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    flex-grow:1;
+}
+
+.product-tag{
+    display:inline-block;
+    background:#eff6ff;
+    color:#2563eb;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:.8rem;
+    font-weight:600;
+    width:fit-content;
+}
+
+.product-card h3{
+    margin:0;
+    color:#0f3b4f;
+}
+
+.product-card p{
+    color:#64748b;
+    font-size:.95rem;
+}
+
+.price{
+    color:#2563eb;
+    font-size:1.2rem;
+    font-weight:700;
+}
+
+.btn-product{
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:12px;
+    border-radius:10px;
+    margin-top:auto;
+}
+
+.btn-product:hover{
+    background:#1d4ed8;
+}
+
+.no-results{
+    display:none;
+    text-align:center;
+    padding:40px;
+    color:#64748b;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <a href="index.html" class="logo">P Techs <span>Technologies</span></a>
+
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="products.html" class="nav-link">Products</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+    <h1>Our Products</h1>
+    <p>Explore innovative technology products designed to improve security, productivity, and digital learning.</p>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+
+    <!-- SEARCH -->
+    <div class="search-bar">
+        <input type="text" id="product-search" placeholder="🔍 Search products...">
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filter-btns">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="software">Software</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+        <button class="filter-btn" data-filter="education">Education</button>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div class="grid" id="products-grid">
+
+        <article class="product-card" data-category="security">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3" alt="">
+            <div class="product-content">
+                <span class="product-tag">Security</span>
+                <h3>Cyber Shield Pro</h3>
+                <p>Advanced cybersecurity suite with threat monitoring and malware protection.</p>
+                <div class="price">R1,499</div>
+                <a href="#" class="btn-product">View Product</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="software">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="">
+            <div class="product-content">
+                <span class="product-tag">Software</span>
+                <h3>Business Manager</h3>
+                <p>Manage projects, teams, and workflows from one powerful dashboard.</p>
+                <div class="price">R899</div>
+                <a href="#" class="btn-product">View Product</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="education">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="">
+            <div class="product-content">
+                <span class="product-tag">Education</span>
+                <h3>Web Development Course</h3>
+                <p>Learn HTML, CSS, JavaScript and build professional websites.</p>
+                <div class="price">R599</div>
+                <a href="#" class="btn-product">View Product</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="education">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f" alt="">
+            <div class="product-content">
+                <span class="product-tag">Education</span>
+                <h3>AI Fundamentals</h3>
+                <p>Practical introduction to Artificial Intelligence and machine learning.</p>
+                <div class="price">R699</div>
+                <a href="#" class="btn-product">View Product</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="software">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692" alt="">
+            <div class="product-content">
+                <span class="product-tag">Software</span>
+                <h3>Cloud Backup Suite</h3>
+                <p>Secure cloud storage with automated backup and recovery features.</p>
+                <div class="price">R1,199</div>
+                <a href="#" class="btn-product">View Product</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="security">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="">
+            <div class="product-content">
+                <span class="product-tag">Security</span>
+                <h3>Network Defender</h3>
+                <p>Protect your business network with enterprise-grade security tools.</p>
+                <div class="price">R1,999</div>
+                <a href="#" class="btn-product">View Product</a>
+            </div>
+        </article>
+
+    </div>
+
+    <p class="no-results" id="no-results">
+        No products found. Try another search term.
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 P Techs Technologies | All Rights Reserved</p>
+</footer>
+
+<script>
+const input = document.getElementById('product-search');
+const cards = document.querySelectorAll('.product-card');
+const noResults = document.getElementById('no-results');
+
+let activeFilter = 'all';
+
+function filterProducts() {
+    const search = input.value.toLowerCase();
+    let visible = 0;
+
+    cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const category = card.dataset.category;
+
+        const matchSearch = text.includes(search);
+        const matchFilter =
+            activeFilter === 'all' ||
+            category === activeFilter;
+
+        const show = matchSearch && matchFilter;
+
+        card.style.display = show ? 'flex' : 'none';
+
+        if(show) visible++;
+    });
+
+    noResults.style.display =
+        visible === 0 ? 'block' : 'none';
+}
+
+input.addEventListener('input', filterProducts);
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function(){
+        document.querySelectorAll('.filter-btn')
+            .forEach(b => b.classList.remove('active'));
+
+        this.classList.add('active');
+        activeFilter = this.dataset.filter;
+        filterProducts();
+    });
+});
+</script>
+
+</body>
+</html>

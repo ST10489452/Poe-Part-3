@@ -1,0 +1,398 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Blog | P Techs Technologies – Tech News & Insights</title>
+    <meta name="description" content="Read the latest tech news, cybersecurity insights, and digital innovation articles from P Techs Technologies.">
+    <meta name="keywords" content="tech blog, cybersecurity news, AI articles, programming tips, P Techs blog, South Africa tech">
+    <meta name="author" content="P Techs Technologies">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .page-hero {
+            background: #000;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-hero h1 { font-size: 2.6rem; color: #fff; }
+        .page-hero p { color: #94a3b8; margin-top: 8px; }
+
+        .blog-layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .main-content {
+            flex: 2;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        /* Article card */
+        .blog-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            margin-bottom: 28px;
+            overflow: hidden;
+            transition: transform 0.25s, box-shadow 0.25s;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+        }
+
+        .blog-card-body {
+            padding: 28px;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: #2563eb;
+            border-radius: 20px;
+            padding: 3px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .blog-card h2 {
+            font-size: 1.4rem;
+            color: #0f172a;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .blog-meta {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        .blog-card p {
+            color: #334155;
+            font-size: 0.97rem;
+            margin-bottom: 16px;
+        }
+
+        .read-more {
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .read-more:hover { text-decoration: underline; }
+
+        /* Full article modal */
+        .article-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 9000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .article-modal.open {
+            display: flex;
+        }
+
+        .article-modal-content {
+            background: #fff;
+            border-radius: 16px;
+            max-width: 760px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .modal-close:hover { color: #0f172a; }
+
+        /* Sidebar */
+        .sidebar-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 14px;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        .sidebar-card h4 {
+            font-size: 0.97rem;
+            color: #0f3b4f;
+            margin-bottom: 6px;
+        }
+
+        .sidebar-card p {
+            font-size: 0.88rem;
+            color: #475569;
+        }
+
+        .sidebar-card small {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 900px) {
+            .blog-layout { flex-direction: column; }
+            .sidebar { min-width: unset; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <a href="index.html" class="logo">P Techs <span>Technologies</span></a>
+    <nav aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="products.html" class="nav-link">Products</a></li> 
+            <li><a href="blog.html" class="nav-link" aria-current="page">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+           
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+    <h1>TECHFORWARD</h1>
+    <p>News, insights, and ideas from the world of technology</p>
+</section>
+
+<div class="blog-layout">
+
+    <!-- MAIN -->
+    <main class="main-content" aria-label="Blog articles">
+
+        <!-- SEARCH -->
+        <div class="search-bar" role="search" style="margin-bottom:20px;">
+            <input type="text" id="blog-search" placeholder="🔍  Search articles…" aria-label="Search blog articles">
+        </div>
+
+        <!-- FILTER -->
+        <div class="filter-btns" role="group" aria-label="Filter by topic">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai">AI</button>
+            <button class="filter-btn" data-filter="security">Security</button>
+            <button class="filter-btn" data-filter="web">Web Dev</button>
+        </div>
+
+        <!-- ARTICLES -->
+        <div id="blog-grid">
+
+            <article class="blog-card fade-in" data-category="ai"
+                data-title="How Do You Measure an A.I. Boom?"
+                data-author="Kevin Roose"
+                data-date="3 days ago"
+                data-body="A chart created by METR, a nonprofit A.I. organisation, has become an industrywide obsession as it measures the rapid development of big A.I. systems. For years, the artificial intelligence industry has been obsessed with a single question: how do we know if we are actually making progress? As models become more powerful, the old benchmarks are falling by the wayside. METR's approach focuses on 'agentic' capabilities — can the AI complete complex, multi-step tasks without constant human intervention? Policymakers are watching closely, as the timeline for transformative AI may be shorter than many expect.">
+                <div class="blog-card-body">
+                    <span class="blog-tag">AI</span>
+                    <h2>How Do You Measure an A.I. Boom?</h2>
+                    <div class="blog-meta">By Kevin Roose &bull; 3 days ago</div>
+                    <p>A chart created by METR, a nonprofit A.I. organisation, has become an industrywide obsession as it measures the rapid development of big A.I. systems.</p>
+                    <a href="#" class="read-more" onclick="openArticle(this); return false;">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card fade-in" data-category="security"
+                data-title="White House and Anthropic Hold 'Productive' Meeting"
+                data-author="Julian E. Barnes"
+                data-date="2 days ago"
+                data-body="Friday's meeting at the White House followed the introduction of Anthropic's powerful new artificial intelligence model, which U.S. officials believe could be critical for national security. The discussions focused on responsible AI deployment, safety frameworks, and ensuring powerful models are developed with appropriate oversight. Both sides described the meeting as productive and constructive, with plans for ongoing dialogue.">
+                <div class="blog-card-body">
+                    <span class="blog-tag">Security</span>
+                    <h2>White House and Anthropic Hold 'Productive' AI Safety Meeting</h2>
+                    <div class="blog-meta">By Julian E. Barnes &bull; 2 days ago</div>
+                    <p>The meeting followed the introduction of Anthropic's powerful new AI model, which U.S. officials believe could be critical for national security interests.</p>
+                    <a href="#" class="read-more" onclick="openArticle(this); return false;">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card fade-in" data-category="ai"
+                data-title="How 'Jagged Intelligence' Can Reframe the A.I. Debate"
+                data-author="Cade Metz"
+                data-date="April 16, 2026"
+                data-body="AI has always been compared to human intelligence, but that may not be the right framework. The concept of 'jagged intelligence' describes how AI excels in some areas while failing completely in others — sometimes in unexpected ways. Understanding these jagged edges can help predict which jobs AI may augment, which it may replace, and where human judgment will always be essential. This reframing matters for policymakers, educators, and workers preparing for an AI-integrated future.">
+                <div class="blog-card-body">
+                    <span class="blog-tag">AI</span>
+                    <h2>How 'Jagged Intelligence' Can Reframe the A.I. Debate</h2>
+                    <div class="blog-meta">By Cade Metz &bull; April 16, 2026</div>
+                    <p>AI has always been compared to human intelligence, but that may not be the right way to think about it. What it does well can help predict what jobs it may replace.</p>
+                    <a href="#" class="read-more" onclick="openArticle(this); return false;">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card fade-in" data-category="web"
+                data-title="Spice Up Your Cooking Skills With Help From Your Phone"
+                data-author="J. D. Biersdorfer"
+                data-date="April 15, 2026"
+                data-body="Recipe apps and artificial intelligence can give you a boost in the kitchen, but free tools already on your device can also assist with meal planning and preparation. From smart substitution suggestions to step-by-step voice guidance, your smartphone is quickly becoming an indispensable kitchen companion. Here is a look at the best tools and techniques for becoming a better home cook with the help of technology.">
+                <div class="blog-card-body">
+                    <span class="blog-tag">Tech Tips</span>
+                    <h2>Spice Up Your Cooking Skills With Help From Your Phone</h2>
+                    <div class="blog-meta">By J. D. Biersdorfer &bull; April 15, 2026</div>
+                    <p>Recipe apps and AI can give you a boost in the kitchen, but free tools already on your device can also assist with meal planning and preparation.</p>
+                    <a href="#" class="read-more" onclick="openArticle(this); return false;">Read More →</a>
+                </div>
+            </article>
+
+        </div>
+
+        <p id="no-blog-results" style="display:none; text-align:center; color:#64748b; padding:40px;">No articles match your search.</p>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Blog sidebar">
+        <div class="sidebar-card">
+            <h3>Popular Topics</h3>
+            <div class="filter-btns" style="flex-direction:column; gap:6px;">
+                <button class="filter-btn" onclick="filterByCategory('ai')" style="text-align:left;">🤖 Artificial Intelligence</button>
+                <button class="filter-btn" onclick="filterByCategory('security')" style="text-align:left;">🔒 Cybersecurity</button>
+                <button class="filter-btn" onclick="filterByCategory('web')" style="text-align:left;">💻 Web Development</button>
+            </div>
+        </div>
+
+        <div class="sidebar-card">
+            <h3>About TechForward</h3>
+            <p>TechForward is the P Techs blog covering the latest in AI, cybersecurity, and digital innovation — written for South Africa's growing tech community.</p>
+        </div>
+
+        <div class="sidebar-card">
+            <h3>Stay Updated</h3>
+            <p style="margin-bottom:12px;">Get the latest articles delivered to your inbox.</p>
+            <a href="enquiry.html" class="btn" style="width:100%;text-align:center;display:block;">Subscribe</a>
+        </div>
+    </aside>
+
+</div>
+
+<!-- ARTICLE MODAL -->
+<div id="article-modal" class="article-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="article-modal-content">
+        <button class="modal-close" onclick="closeModal()" aria-label="Close article">&times;</button>
+        <span id="modal-tag" class="blog-tag" style="margin-bottom:14px;display:inline-block;"></span>
+        <h2 id="modal-title" style="font-size:1.7rem; color:#0f172a; margin-bottom:8px;"></h2>
+        <p id="modal-meta" style="color:#64748b; font-size:0.88rem; margin-bottom:20px;"></p>
+        <div id="modal-body" style="color:#334155; line-height:1.8; font-size:1rem;"></div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 P Techs Technologies | <a href="contact.html">Contact Us</a> | <a href="enquiry.html">Enquiry</a></p>
+</footer>
+
+<script src="JS/main.js"></script>
+<script>
+    // Blog search & filter
+    const blogInput = document.getElementById('blog-search');
+    const blogCards = document.querySelectorAll('.blog-card');
+    const noResults = document.getElementById('no-blog-results');
+    let activeBlogFilter = 'all';
+
+    function filterBlog() {
+        const q = blogInput.value.toLowerCase().trim();
+        let visible = 0;
+        blogCards.forEach(card => {
+            const text = (card.dataset.title + ' ' + card.dataset.body).toLowerCase();
+            const cat = card.dataset.category;
+            const matchSearch = text.includes(q);
+            const matchFilter = activeBlogFilter === 'all' || cat === activeBlogFilter;
+            const show = matchSearch && matchFilter;
+            card.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
+        noResults.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    blogInput.addEventListener('input', filterBlog);
+
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            activeBlogFilter = this.dataset.filter;
+            filterBlog();
+        });
+    });
+
+    function filterByCategory(cat) {
+        activeBlogFilter = cat;
+        document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
+        filterBlog();
+    }
+
+    // Modal
+    function openArticle(el) {
+        const card = el.closest('.blog-card');
+        document.getElementById('modal-title').textContent = card.dataset.title;
+        document.getElementById('modal-meta').textContent = 'By ' + card.dataset.author + '  •  ' + card.dataset.date;
+        document.getElementById('modal-body').textContent = card.dataset.body;
+        document.getElementById('modal-tag').textContent = card.dataset.category?.toUpperCase() || 'ARTICLE';
+        document.getElementById('article-modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('article-modal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('article-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
+
